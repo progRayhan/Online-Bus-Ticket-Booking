@@ -22,6 +22,7 @@ def execute_sql(sql_query):
         cursor.execute(sql_query)
         db_conn.commit()
         db_conn.close()
+        return "Query executed successfully"
     except Exception as e:
         return f"Error: {e}"
     
