@@ -17,9 +17,11 @@ def execute_sql(sql_query):
     Executes a given SQL query using the bus_ticket.db connection.
     """
 
-    db_conn, cursor = database_of_bus_ticket()
-
-    cursor.execute(sql_query)
-
-    db_conn.commit()
-    db_conn.close()
+    try:
+        db_conn, cursor = database_of_bus_ticket()
+        cursor.execute(sql_query)
+        db_conn.commit()
+        db_conn.close()
+    except Exception as e:
+        return f"Error: {e}"
+    
