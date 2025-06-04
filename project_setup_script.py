@@ -1,5 +1,5 @@
 from database import execute_sql
-from create_db_tables import create_bus_table
+from create_db_tables import create_bus_table, create_ticket_booking_table
 
 def seed_bus_data():
     """
@@ -29,3 +29,4 @@ def seed_bus_data():
 
 create_bus = create_bus_table()
 seed_bus = seed_bus_data()
+create_ticket_table = create_ticket_booking_table()
